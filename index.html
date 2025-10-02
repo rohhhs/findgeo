@@ -1,0 +1,102 @@
+    <html>
+        <head>
+            <base href="http://localhost:8001/">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+            <link rel="stylesheet" href="./asset/style/blank.css">
+            <link rel="stylesheet" href="./asset/style/default.css">
+            <link rel="stylesheet" href="./asset/style/design.css">
+        </head>
+        <body class="basic">
+            <header>
+                <img src="./asset/icon/logo.svg" class="icon" />
+            </header>
+            <main class="landing">
+                <div id="map">
+                    <div id="map-bbox">
+                    </div>
+                </div>
+                <div>
+                    <h1>Добро пожаловать в интерфейс функции . <span class="decor001">FindGeo <span>( <span class="active001"><span class="active001-1">0</span> . <span class="active001-2">0</span></span> )</span></span></h1>
+                    <ul>
+                        <li><span>найти адрес по фотографии .</span></li>
+                        <li><span>опеределить геолокацию по фотографии .</span></li>
+                        <li><span>выделить перечень похожих областей , определить тип объекта на фотографии .</span></li>
+                    </ul>
+                    <div class="action"><a href="./auth"><span>ПРОДОЛЖИТЬ</span><img src="./asset/icon/arrow.svg"/></a></div>
+                    <p>* при продолжении подтверждаю ознакомление с методами обработки данных .</p>
+                </div>
+            </main>
+            <footer>
+                <span>2025  © FindGeo . Страница доступа в web-интерфейс функции FindGeo( object ) .</span>
+            </footer>
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+    let timeoutId;
+    let startTime;
+    const element1 = document.querySelector(".active001-1"); // Latitude
+    const element2 = document.querySelector(".active001-2"); // Longitude
+
+    // Function to generate random number between min (inclusive) and max (inclusive)
+    function generateRandomNumber(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    // Function to generate random delay between 100-1300ms
+    function getRandomDelay() {
+        return Math.floor(Math.random() * 301) + 100; // 100 to 1300 ms
+    }
+
+    // NEW: Function to update map bbox position
+    function updateMapBBox(lat, lng) {
+        const map = document.getElementById('map');
+        const bbox = document.getElementById('map-bbox');
+
+        if (!map || !bbox) return;
+
+        const rect = map.getBoundingClientRect();
+
+        // Flip Y: -90 lat is bottom, 90 is top → so invert
+        const y = ((-lat + 90) / 180) * rect.height;
+        // X: 0 to 180 maps to 0 to map width
+        const x = (lng / 180) * rect.width;
+
+        bbox.style.left = `${x}px`;
+        bbox.style.top = `${y}px`;
+        bbox.style.display = 'block';
+    }
+
+    // Async function to update numbers with random intervals
+    async function updateNumbersRandomly() {
+        while (Date.now() - startTime < 20000) {
+            const lat = generateRandomNumber(-90, 90);
+            const lng = generateRandomNumber(0, 180); // Only eastern hemisphere?
+
+            if (element1) element1.innerHTML = lat;
+            if (element2) element2.innerHTML = lng;
+
+            // Update position on map
+            updateMapBBox(lat, lng);
+
+            // Wait for random delay
+            await new Promise(resolve => {
+                const delay = getRandomDelay();
+                timeoutId = setTimeout(resolve, delay);
+            });
+        }
+
+        console.log("Stopped after 20 seconds. Final coordinates:", {
+            latitude: element1 ? parseFloat(element1.innerHTML) : null,
+            longitude: element2 ? parseFloat(element2.innerHTML) : null
+        });
+    }
+
+    // Start after 7 seconds
+    setTimeout(function() {
+        startTime = Date.now();
+        updateNumbersRandomly();
+    }, 7000);
+});
+            </script>
+        </body>
+    </html>
