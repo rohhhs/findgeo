@@ -4,7 +4,7 @@ import math
 import requests
 
 # Globals you may set before calling:
-YANDEX_API_KEY = "f9d3919c-1567-4e72-979a-400f1d664848"
+YANDEX_API_KEY = "$$$"
 # YANDEX_IAM_TOKEN = "ya...iam-token..."  # if using Yandex Cloud endpoint
 
 def _haversine_km(lat1: float, lon1: float, lat2: float, lon2: float) -> float:
@@ -464,7 +464,7 @@ def simplifiedFindAddress(latitude: float, longitude: float, results: int = 5, l
 if __name__ == "__main__":
     # set your credentials before calling, e.g.:
     # or
-    YANDEX_IAM_TOKEN = "t1.9euelZqVjI7KjZ6blI6Nx5jIkZSLl-3rnpWayM-QyMrIj4qYnomaz8nLi4zl8_dkaAo5-e8VdzRh_t3z9yQXCDn57xV3NGH-zef1656VmseSzouOysuMxsaQzpjGm4mZ7_zF656VmseSzouOysuMxsaQzpjGm4mZ.soSFbJbmMVrWgg8QIu6h98L0VfAkIj9unQrjjlH0yMOAjclay5p0b71iZ7CTJKMgeehXjo06Noy0omsc_fAcBg"
+    YANDEX_IAM_TOKEN = "$$$"
     results = simplifiedFindAddress(55.8171027685086, 37.4656205177302, results=2, lang="ru_RU")
     for r in results:
         print(r)
