@@ -1,0 +1,14 @@
+body,ul,ol,input,button,textarea,select,section,main,html,form{margin:unset;padding:unset;}
+a:any-link{text-decoration: unset;}
+a:visited{color: #8800aa;}a:visited >svg>path{fill: #8800aa;}
+html,main{min-height: 100vh;}
+img,svg,video{max-width: 100%;height: auto;}
+input,option,button,textarea,select{font-family: inherit;cursor: pointer;color: inherit;border: unset;}
+button,a{transition: 0.5s;}
+button:hover,input[type="submit"]:hover,a:any-link:hover{opacity: 0.65;}
+ol{list-style: unset;}
+main{min-height:100vh}
+main>ul>li{list-style-position:inside;margin-left:12px;}
+footer{border-top: 1px solid hsl(220, 0%, 60%);padding-left:8px;padding-right:8px;padding-top:12px;padding-bottom:12px;display:block;}
+footer>span{width:calc(100% - 24px);padding-left:12px;display:flex;}
+main{min-height:100vh;}

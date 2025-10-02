@@ -1,0 +1,100 @@
+@font-face {
+    font-family: Manrope;
+    src: url(../font/Manrope/Manrope-VariableFont_wght.ttf);
+}
+@font-face {
+    font-family: Roboto-condensed;
+    src: url(../font/Roboto_Condensed/RobotoCondensed-VariableFont_wght.ttf);
+}
+
+html{
+    font-family: Roboto , system-ui , sans-serif;
+    font-size: 17.5px;
+}
+html img.icon {
+    min-height: 40px;
+    min-width: 40px;
+}
+body h1 {
+    font-family: Manrope;
+    line-height: 1;
+    font-weight: 900;
+    letter-spacing: -0.05em;
+}
+div#map {
+    position: relative;
+    background: #000000;
+    aspect-ratio: 1/1;
+}
+div#map > div#map-bbox{
+    border: 8px solid #ff0000;
+    position: absolute;
+    width: 100px;
+    aspect-ratio: 1/1;
+    transform: translate(-50%,-50%);
+}
+#media-fullscreen{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    transition: 1s;
+    transform: translate(-100vw , 0);
+    background: #ffffff;
+    pointer-events: none;
+}
+#media-fullscreen.active{
+    transform: translate(0 , 0);
+    pointer-events: all;
+}
+#media-fullscreen > button{
+    position: fixed;
+    display: flex;
+    align-items: center;
+    background: unset;
+    justify-content: center;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+}
+#media-fullscreen > button > img,
+#media-fullscreen > button > svg{
+    width: 100%;
+}
+#media-fullscreen > img{
+    width: 100vw;
+    height: 100vh;
+    object-fit: contain;
+}
+@media screen and (min-width:651px) {
+    body h1 {
+        font-size: 48px;
+    }
+}
+
+@media screen and (max-width:650px) {
+    html , body , main {
+        max-width: 100vw !important;
+        overflow-x: hidden;
+    }
+    body h1 {
+        font-size: 30px;
+    }
+    main{
+        margin-top: unset !important;
+        display: flex;
+        flex-direction: column;
+    }
+    main h1,main ul , main .action , main p {
+        width: calc(100vw - 24px);
+        margin-left: 12px;
+    }
+    main h1>span{
+        max-width: calc(100% - 24px);
+    }
+    body.basic > main {
+        display: flex;
+    }
+}

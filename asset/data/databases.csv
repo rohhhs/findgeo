@@ -1,0 +1,4 @@
+id,database,image_folder
+1,./asset/data/database001.csv,./asset/image/database001
+2,./asset/data/data18-001.csv,./asset/image/newdata18-001
+3,./asset/data/data19-001.csv,./asset/image/newdata19-001

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+    </style>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer_1">
+    <g>
+      <g id="form">
+        <rect id="empty" class="cls-1" width="40" height="40"/>
+      </g>
+      <g id="object">
+        <g>
+          <path d="M12.28,23.7c-.95,2.94.61,6.08,3.41,7.28,1.19.51,2.64.89,4.31.89.44,0,2.2-.03,4.25-.87,2.84-1.17,4.43-4.34,3.47-7.31-.72-2.21-2.63-3.67-7.72-3.67s-7,1.46-7.72,3.67Z"/>
+          <ellipse cx="20" cy="14.11" rx="4.66" ry="4.74"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

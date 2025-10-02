@@ -1,0 +1,6 @@
+username,name,surname,patronym,birthdate,place,status,request,json_log
+john_doe2,John,Doe,Third,2000.08.31,Russia,Administrator,0,user_log/john_doe2.json
+new_user2,John,Doe,,2000-08-31,Russia,User,0,user_log/new_user2.json
+new_user3,John,Doe,,2000-08-31,Russia,User,0,user_log/new_user3.json
+new_user4,John,Doe,,2000-08-31,Russia,User,0,user_log/new_user4.json
+new_user95,John,Doe,,2000-08-31,Russia,User,0,user_log/new_user95.json
